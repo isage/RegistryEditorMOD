@@ -5,7 +5,7 @@ OBJS     = main.o ime_dialog.o
 LIBS = -lvita2d -lSceDisplay_stub -lSceGxm_stub \
 	-lSceSysmodule_stub -lSceCtrl_stub -lScePgf_stub \
 	-lSceCommonDialog_stub -lfreetype -lpng -ljpeg -lz -lm -lc \
-	-lSceReg_stub -lSceAppUtil_stub
+	-lSceRegistryMgr_stub -lSceAppUtil_stub
 
 PREFIX  = arm-vita-eabi
 CC      = $(PREFIX)-gcc
