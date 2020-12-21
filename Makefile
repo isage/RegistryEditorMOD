@@ -5,7 +5,7 @@ OBJS     = main.o ime_dialog.o regs.o
 LIBS = -lvita2d -lSceDisplay_stub -lSceGxm_stub \
 	-lSceSysmodule_stub -lSceCtrl_stub -lScePgf_stub \
 	-lSceCommonDialog_stub -lfreetype -lpng -ljpeg -lz -lm -lc \
-	-lSceRegistryMgr_stub -lSceAppUtil_stub
+	-lSceRegistryMgr_stub -lSceAppUtil_stub -lSceAppMgr_stub
 
 PREFIX  = arm-vita-eabi
 CC      = $(PREFIX)-gcc
@@ -21,7 +21,7 @@ all: $(TARGET).vpk
 	$(TARGET).vpk
 
 eboot.bin: $(TARGET).velf
-	vita-make-fself $< $@
+	vita-make-fself -at 0xE -m 0x10000 $< $@
 
 %.velf: %.elf
 	vita-elf-create $< $@
