@@ -10,6 +10,8 @@
 #include "main.h"
 #include "ime_dialog.h"
 
+int _newlib_heap_size_user = 16 * 1024 * 1024;
+
 // Store positions so that the right item is selected when the user presses the back button
 int topList[10] = {0};
 int curPosList[10] = {0};
